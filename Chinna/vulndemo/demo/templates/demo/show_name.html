@@ -1,0 +1,10 @@
+<!-- demo/templates/demo/show_name.html (VULNERABLE) -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XSS Demo</title>
+</head>
+<body>
+    <h2>Hello {{ name|safe }}</h2>
+</body>
+</html>
