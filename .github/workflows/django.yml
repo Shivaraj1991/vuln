@@ -38,8 +38,8 @@ jobs:
           cd Chinna/vulndemo
           python manage.py test
 
-          - name: SonarQube Scan
-            uses: SonarSource/sonarqube-scan-action@v6
-            env:
-              SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-              SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v6
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
