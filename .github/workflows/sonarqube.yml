@@ -25,6 +25,17 @@ jobs:
         with:
           python-version: '3.12'
 
+      - run: pip install bandit semgrep pip-audit
+
+      - name: Bandit Scan
+        run: bandit -r Chinna/vulndemo
+
+      - name: Semgrep Scan
+        run: semgrep --config=p/owasp-top-ten Chinna/vulndemo
+
+      - name: Dependency Audit
+        run: pip-audit -r Chinna/vulndemo     
+
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v6
         env:
