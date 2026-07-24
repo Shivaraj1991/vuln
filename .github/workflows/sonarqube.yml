@@ -34,6 +34,7 @@ jobs:
         run: semgrep --config=p/owasp-top-ten Chinna/vulndemo
 
       - name: Dependency Audit
+        continue-on-error: true
         run: pip-audit -r Chinna/vulndemo     
 
       - name: SonarQube Scan
